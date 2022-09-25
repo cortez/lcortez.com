@@ -391,6 +391,13 @@ a {
 	animation-fill-mode: both;
 }
 
+@media screen and (max-height:550px) {
+	.note-popup-content {
+		top: 10vh;
+		height: 90vh;
+	}
+}
+
 @media screen and (max-width:799px) {
 
 	html,
@@ -472,12 +479,5 @@ a {
 @media screen and (max-width:449px) {
 	.container .icons ul li .txt {
 		display: none;
-	}
-}
-
-@media screen and (max-height:550px) {
-	.note-popup-content {
-		top: 10vh;
-		height: 90vh;
 	}
 }
