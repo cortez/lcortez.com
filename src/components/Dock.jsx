@@ -49,13 +49,13 @@ export default function Dock() {
                         </a>
                         <a href="https://github.com/cortez">
                             <li data-color={githubColor}>
-                                <LinkedIn />
+                                <GitHub />
                                 <span class="txt">GitHub</span>
                             </li>
                         </a>
                         <a href="https://linkedin.com/in/seph">
                             <li data-color={linkedinColor}>
-                                <GitHub />
+                                <LinkedIn />
                                 <span class="txt">LinkedIn</span>
                             </li>
                         </a>
