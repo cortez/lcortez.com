@@ -21,6 +21,8 @@ export default function Dock() {
                                 href="https://quill.live">Quill</a> (2022): A plain text collaboration tool
                                 where changes to each generated page are updated in real-time and accessible
                                 from any device.
+                                <br /><br />
+                                *This website was built with React and the source code is available <a className="underline" href="https://github.com/cortez/web">here</a>.
                             </h3>
                         </div>
                         <a className="note-popup-close" onClick={handleClick}>
