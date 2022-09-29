@@ -1,70 +1,73 @@
-import { Projects } from "./svg/Projects";
-import { LinkedIn } from "./svg/LinkedIn";
-import { GitHub } from "./svg/GitHub";
-import { Contact } from "./svg/Contact";
-import { useState } from "react";
-
-const projectsColor = "255, 202, 15";
-const githubColor = "109, 74, 255";
-const linkedinColor = "0, 115, 177";
-const contactColor = "122, 130, 171";
+import { Links } from "./Links"
+import React, { useState } from "react";
 
 export default function Dock() {
+    
     const [visible, setVisible] = useState(false);
     const handleClick = event => {
         event.preventDefault();
-        setVisible(current => !current);
-      };
-      return (
-        <div>
-          {} {visible && (
+        setVisible(current => !current); 
+    };
+
+    function Popup() {
+        return (
             <div className="box">
-                <section class="note-popup-box">
-                    <div class="note-popup-content">
-                        <div class="note-popup-text">
+                <section className="note-popup-box">
+                    <div className="note-popup-content">
+                        <div className="note-popup-text">
                             <h2>Projects</h2>
                             <br />
-                            <h3 class="popup-text"><a class="underline" href="https://quill.live">Quill</a> (2022): A plain text collaboration tool where changes to each generated page are updated in real-time and accessible from any device.
+                            <h3 className="popup-text"><a className="underline"
+                                href="https://quill.live">Quill</a> (2022): A plain text collaboration tool
+                                where changes to each generated page are updated in real-time and accessible
+                                from any device.
                             </h3>
                         </div>
-                        <a class="note-popup-close" onClick={handleClick}>
-                        <div class="note-popup-line"></div>
-                        <div class="note-popup-line"></div>
+                        <a className="note-popup-close" onClick={handleClick}>
+                            <div className="note-popup-line"></div>
+                            <div className="note-popup-line"></div>
                         </a>
                     </div>
-                    <div class="note-popup-background" onClick={handleClick}>
-                    </div>
+                    <div className="note-popup-background" onClick={handleClick}></div>
                 </section>
             </div>
-          )}
-            <section class="container">
-                <div class="icons">
-                    <ul class="lists">
-                        <span class="floation"></span>
-                        <a class="note-popup" href="" onClick={handleClick}>
-                            <li data-color={projectsColor}>
-                                <Projects />
-                                <span class="txt">Projects</span>
+        );
+    }
+
+    const getLinks = Links => {
+        let content = [];
+        for (let link of Links) {
+            content.push(
+            <a href={link.href} className={link.class}>
+                <li data-color={link.color}>
+                    {link.icon}
+                    <span className="tooltip">{link.name}</span>
+                </li>
+            </a>);   
+        }
+        return content.slice(1);
+    };
+
+    let renderLinks = () => {
+        return getLinks(Links);
+    }
+
+    return (
+        <div>
+            {} {visible && (
+                <Popup />
+            )}
+            <section className="container">
+                <div className="icons">
+                    <ul className="lists">
+                        <span className="floation"></span>
+                        <a href={Links[0].href} className={"note-popup"} onClick={handleClick}>
+                            <li data-color={Links[0].color}>
+                            {Links[0].icon}
+                            <span className="tooltip">{Links[0].name}</span>
                             </li>
                         </a>
-                        <a href="https://github.com/cortez">
-                            <li data-color={githubColor}>
-                                <GitHub />
-                                <span class="txt">GitHub</span>
-                            </li>
-                        </a>
-                        <a href="https://linkedin.com/in/seph">
-                            <li data-color={linkedinColor}>
-                                <LinkedIn />
-                                <span class="txt">LinkedIn</span>
-                            </li>
-                        </a>
-                        <a href="mailto:joseph@lcortez.com">
-                            <li data-color={contactColor}>
-                                <Contact />
-                                <span class="txt">Contact</span>
-                            </li>
-                        </a>
+                        {renderLinks()}
                     </ul>
                 </div>
             </section>
@@ -72,21 +75,21 @@ export default function Dock() {
     );
 }
 
-window.onload = function () {
-    let lists = document.querySelectorAll(".lists li"),
-      float = document.getElementsByClassName("floation")[0];
-    for (let i = 0; i < lists.length; i++) {
-      let position = lists[i].offsetLeft,
-        color = lists[i].getAttribute('data-color');
-      let parentColor = lists[i].parentElement.parentElement.parentElement;
-      lists[i].onmouseover = function () {
-        this.style.color = "rgb("+color+")";
-        float.style.left = position + "px";
-        float.style.backgroundColor = "rgb("+color+", 0.12)";
-      }
-      lists[i].onmouseleave = function () {
-        this.style.color = "var(--icon)";
-        float.style.backgroundColor = "var(--box-bg)";
-      }
-}
+window.onload = () => {
+    let links = document.querySelectorAll("li"), float = document.getElementsByClassName("floation")[0];
+
+    for (let i = 0; i < links.length; i++) {
+        let position = (links[i]).offsetLeft, color = links[i].getAttribute('data-color');
+            
+        links[i].onmouseover = function () {
+            this.style.color = "rgb("+color+")";
+            float.style.left = position + "px";
+            float.style.backgroundColor = "rgb("+color+", 0.12)";
+        }
+
+        links[i].onmouseleave = function () {
+            this.style.color = "var(--icon)";
+            float.style.backgroundColor = "var(--box-bg)";
+        }
+    }
 }

@@ -296,7 +296,7 @@ p {
 	left: 0px;
 }
 
-.container .icons ul li .txt {
+.container .icons ul li .tooltip {
 	position: absolute;
 	top: -50px;
 	left: -7px;
@@ -320,7 +320,7 @@ p {
 	border: 1.5px solid var(--accent-hover);
 }
 
-.container .icons ul li:hover .txt {
+.container .icons ul li:hover .tooltip {
 	opacity: 1;
 	transform: translateY(0);
 	visibility: visible;
@@ -477,7 +477,7 @@ a {
 }
 
 @media screen and (max-width:449px) {
-	.container .icons ul li .txt {
+	.container .icons ul li .tooltip {
 		display: none;
 	}
 }
