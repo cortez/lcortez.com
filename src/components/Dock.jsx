@@ -36,22 +36,17 @@ export default function Dock() {
         );
     }
 
-    const getLinks = Links => {
-        let content = [];
-        for (let link of Links) {
-            content.push(
-            <a href={link.href} className={link.class}>
-                <li data-color={link.color}>
-                    {link.icon}
-                    <span className="tooltip">{link.name}</span>
-                </li>
-            </a>);   
-        }
-        return content.slice(1);
-    };
-
     let renderLinks = () => {
-        return getLinks(Links);
+        return (
+            Links.map((link) => (
+                <a href={link.href} className={link.class}>
+                    <li data-color={link.color}>
+                        {link.icon}
+                        <span className="tooltip">{link.name}</span>
+                    </li>
+                </a>
+            ))
+        );
     }
 
     return (
@@ -69,7 +64,7 @@ export default function Dock() {
                             <span className="tooltip">{Links[0].name}</span>
                             </li>
                         </a>
-                        {renderLinks()}
+                        {renderLinks().slice(1)}
                     </ul>
                 </div>
             </section>
