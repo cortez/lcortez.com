@@ -505,7 +505,7 @@ a {
 @media screen and (max-height:550px) {
 	
 	* {
-		font-size: 14px !important;
+		font-size: 15px !important;
 	}
 
 	.note-popup-text {
