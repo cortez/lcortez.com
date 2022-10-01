@@ -10,7 +10,4 @@ root.render(
     <App />
   </React.StrictMode>
 );
-
-AOS.init({
-  duration: 250.
-});
+AOS.init({ duration: 250. });

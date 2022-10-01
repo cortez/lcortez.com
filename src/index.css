@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 :root {
-	--font: #8E8E93;
+	--font: #86868a;
 	--bg: #F9F9F9;
 	--icon: #1C1C1E;
 	--accent: #F4F4F4;
@@ -12,7 +12,7 @@
 	--popup-bg: 75, 75, 75;
 	--close: #828787;
 	--underline-text: #3A3A3C;
-	--underline: #E5E5EA;
+	--underline: #d3d3da;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -21,14 +21,14 @@
 		--bg: rgb(21, 21, 21);
 		--icon: #AEAEB2;
 		--accent: rgb(32, 32, 32);
-		--accent-hover: #252525;
+		--accent-hover: #222222;
 		--box-bg: 27, 27, 27;
 		--box-shadow: 10, 10, 10;
 		--popup-font: rgb(21, 21, 21);
 		--popup-bg: 0, 0, 0;
 		--close: rgb(115, 115, 115);
 		--underline-text: #C7C7CC;
-		--underline: #2C2C2E;
+		--underline: #3c3c3e;
 	}
 }
 
@@ -67,9 +67,74 @@ body {
 }
 
 p {
-	margin-top: 37.5vh;
+	margin-top: 33vh;
 	margin-left: 30%;
 	width: 40%;
+}
+
+h3 {
+	color: var(--underline-text);
+}
+
+.caps {
+	line-height: 3em;
+	font-weight: 500;
+	text-transform: uppercase;
+	color: var(--underline);
+}
+
+span {
+	color: var(--icon);
+	font-size: 0.8em;
+}
+
+input, textarea {
+	color: var(--font);
+	font-size: 0.9em;
+	font-family: 'Satoshi';
+	width: 100%;
+	height: 3em;
+	resize: none;
+	padding: 12.5px;
+	margin-bottom: 7.5px;
+	border-radius: 15px;
+	border: 1px solid var(--accent);
+	background-color: var(--accent);
+	outline-width: 0;
+}
+
+textarea {
+	height: 10em;
+}
+
+input:focus, textarea:focus {
+	outline-width: 0;
+	border: none;
+}
+
+input:hover, textarea:hover {
+	color: var(--underline-text);
+	background-color: var(--accent-hover);
+}
+
+
+.submit {
+	color: var(--close);
+	font-weight: 500;
+    position: relative;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    transition: all 0.25s ease 0s;
+
+
+}
+
+.submit:after {
+    content: "";
+    position: absolute;
+    transition: all 0.25s ease 0s;
+    z-index: -1;
 }
 
 .note-popup-box {
@@ -115,7 +180,6 @@ p {
 .note-popup-text {
 	width: 50%;
 	display: inline-block;
-	padding: 7%;
 }
 
 .note-popup-text h2 {
@@ -123,7 +187,7 @@ p {
 	margin: 0;
 	font-size: 1.1em;
 	font-weight: 600;
-	padding-top: 0px;
+	padding-bottom: 35px;
 }
 
 .note-popup-text h3 {
@@ -143,21 +207,26 @@ p {
 	padding: 10px;
 	cursor: pointer;
 	background-color: var(--accent);
+	transition: all 0.25s ease 0s;
 }
 
 .note-popup-close:hover {
-	background-color: var(--underline);
+	background-color: var(--accent-hover);
+	transition: all 0.25s ease 0s;
 }
 
 .note-popup-close .note-popup-line {
 	width: 100%;
 	height: 2px;
+	border-radius: 100px;
 	background: var(--close);
 	position: relative;
+	transition: all 0.25s ease 0s;
 }
 
 .note-popup-close:hover .note-popup-line {
-	background-color: var(--close);
+	background-color: var(--underline-text);
+	transition: all 0.25s ease 0s;
 }
 
 .note-popup-close .note-popup-line:first-child {
@@ -195,7 +264,7 @@ p {
 
 .underline:hover:before {
     width: 0%;
-    background: var(--accent);
+    background: var(--underline);
     transition: width .75s ease;
 }
 
@@ -391,13 +460,6 @@ a {
 	animation-fill-mode: both;
 }
 
-@media screen and (max-height:550px) {
-	.note-popup-content {
-		top: 10vh;
-		height: 90vh;
-	}
-}
-
 @media screen and (max-width:799px) {
 
 	html,
@@ -412,8 +474,8 @@ a {
 	.note-popup-content {
 		left: 0;
 		width: 100%;
-		height: 52.25vh;
-		top: 47.75vh;
+		height: 65vh;
+		top: 35vh;
 		border-bottom-left-radius: 0px;
 		border-bottom-right-radius: 0px;
 	}
@@ -425,8 +487,13 @@ a {
 	}
 
 	.note-popup-text {
-		margin: 3%;
-		width: 90%;
+		padding: 7%;
+		margin: 0%;
+		width: 100%;
+	}
+
+	.note-popup-text h2 {
+		padding-top: 7.5px;
 	}
 
 	p {
@@ -434,6 +501,21 @@ a {
 		margin-left: 6%;
 		margin-right: 6%;
 		width: 88vw;
+	}
+}
+
+@media screen and (max-height:550px) {
+	.note-popup-content {
+		top: 0vh;
+		height: 100vh;
+	}
+
+	.note.popup-text {
+		padding: 0;
+	}
+
+	textarea {
+		height: 4em;
 	}
 }
 
@@ -445,13 +527,14 @@ a {
 	}
 
 	.note-popup-content {
-		top: 50vh;
-		left: 25%;
-		width: 50%;
+		top: 40vh;
+		left: 30%;
+		width: 40%;
 	}
 
 	.note-popup-text {
-		width: 90%;
+		padding: 5%;
+		width: 100%;
 	}
 
 	.note-popup-background {
@@ -461,7 +544,6 @@ a {
 
 @media screen and (min-width:1500px) {
 	.note-popup-content {
-		top: 50%;
 		left: 31%;
 		width: 38%;
 	}

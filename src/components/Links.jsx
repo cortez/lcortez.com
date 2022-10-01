@@ -1,15 +1,8 @@
-import { Projects } from "./svg/Projects";
 import { LinkedIn } from "./svg/LinkedIn";
 import { GitHub } from "./svg/GitHub";
 import { Contact } from "./svg/Contact";
 
 export const Links = [
-    {
-        name: "Projects",
-        color: "255, 202, 15",
-        href: "",
-        icon: <Projects />
-    },
     {
         name: "GitHub",
         color: "109, 74, 255",
@@ -25,7 +18,7 @@ export const Links = [
     {
         name: "Contact",
         color: "122, 130, 171",
-        href: "mailto:joseph@lcortez.com",
+        href: "",
         icon: <Contact />
     }
 ];
