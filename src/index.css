@@ -115,6 +115,7 @@ input:focus, textarea:focus {
 input:hover, textarea:hover {
 	color: var(--underline-text);
 	background-color: var(--accent-hover);
+	transition: all 0.25s ease 0s;
 }
 
 .submit {
