@@ -28,11 +28,12 @@ export function Form() {
   return (
     <form ref={form} onSubmit={validateAndSubmitForm} id="form">
       <h2>Contact</h2>
-      <input type="text" name="name" placeholder="Name" />
-      <input type="text" name="email" placeholder="Email" value={values.email} onChange={setEmail}/>
-      <textarea name="message" placeholder="Message" />
-      <input type="submit" value="Send" className="submit" />
-      <br />
+      <div className="formInputs">
+        <input type="text" name="name" placeholder="Name" />
+        <input type="text" name="email" placeholder="Email" value={values.email} onChange={setEmail}/>
+        <textarea name="message" placeholder="Message" />
+        <input type="submit" value="Send" className="submit" />
+      </div>
       <>
         {status?.type === 'success' && <span>Thank you! I'll get back to you soon. 🎃</span>}
         {status?.type === 'error' && ( <span>Please enter a valid email.</span>)}

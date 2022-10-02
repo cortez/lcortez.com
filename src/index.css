@@ -135,6 +135,10 @@ input:hover, textarea:hover {
     z-index: -1;
 }
 
+.formInputs {
+	padding-top: 60px;
+}
+
 .note-popup-box {
 	position: fixed;
 	width: 100%;
@@ -182,10 +186,11 @@ input:hover, textarea:hover {
 
 .note-popup-text h2 {
 	color: var(--underline-text);
-	margin: 0;
+	left: 30px;
+	top: 35px;
+	position: absolute;
 	font-size: 1.1em;
 	font-weight: 600;
-	padding-bottom: 35px;
 }
 
 .note-popup-text h3 {
@@ -489,10 +494,6 @@ a {
 		padding: 7%;
 		margin: 0%;
 		width: 100%;
-	}
-
-	.note-popup-text h2 {
-		padding-top: 10px;
 	}
 
 	p {
