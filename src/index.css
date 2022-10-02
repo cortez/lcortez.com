@@ -88,6 +88,13 @@ span {
 	font-size: 0.8em;
 }
 
+.subheader {
+	font-weight: 400;
+	color: var(--font) !important;
+	font-size: 0.85em;
+	top: -1px;
+}
+
 input, textarea {
 	color: var(--font);
 	font-size: 0.9em;

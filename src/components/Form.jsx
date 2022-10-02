@@ -27,7 +27,7 @@ export function Form() {
 
   return (
     <form ref={form} onSubmit={validateAndSubmitForm} id="form">
-      <h2>Contact</h2>
+      <h2>Contact <a href="mailto:joseph@lcortez.com" className="underline subheader">(joseph@lcortez.com)</a></h2>
       <div className="formInputs">
         <input type="text" name="name" placeholder="Name" />
         <input type="text" name="email" placeholder="Email" value={values.email} onChange={setEmail}/>
