@@ -326,7 +326,7 @@ input:hover, textarea:hover {
 	align-items: center;
 	transition: 0.3s ease-in-out background-color;
 	bottom: 10px;
-	position: absolute;
+	position: fixed;
 }
 
 .icons {
@@ -473,8 +473,8 @@ a {
 	.note-popup-content {
 		left: 0;
 		width: 100%;
-		height: 79vh;
-		top: 21vh;
+		height: 55vh;
+		top: 45vh;
 		border-bottom-left-radius: 0px;
 		border-bottom-right-radius: 0px;
 	}
@@ -501,17 +501,6 @@ a {
 
 	input, textarea {
 		font-size: 15px;
-	}
-}
-
-@media screen and (max-width:599px) {
-	.note-popup-content {
-		height: 73vh;
-		top: 27vh;
-	}
-
-	.note-popup-box {
-		height: 73vh;
 	}
 }
 
@@ -561,7 +550,6 @@ a {
 	}
 
 	p {
-		font-size: 15px;
 		margin-top: 3%;
 	}
 	
