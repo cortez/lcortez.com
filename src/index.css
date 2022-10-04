@@ -58,7 +58,6 @@
 
 html,
 body {
-	font-size: 1rem;
 	font-family: 'Satoshi';
 	color: var(--font);
 	background-color: var(--bg);
@@ -68,6 +67,7 @@ body {
 }
 
 p {
+	font-size: 17px;
 	margin-top: 33vh;
 	margin-left: 30%;
 	width: 40%;
@@ -85,12 +85,13 @@ h3 {
 }
 
 span {
+	font-size: 15px;
 	color: var(--icon);
-	font-size: 0.95rem;
 	font-weight: 400;
 }
 
 input, textarea {
+	font-size: 16px;
 	color: var(--font);
 	font-family: 'Satoshi';
 	width: 100%;
@@ -187,7 +188,7 @@ input:hover, textarea:hover {
 }
 
 .note-popup-text h2 {
-	font-size: 1.2rem;
+	font-size: 22px;
 	color: var(--underline-text);
 	left: 30px;
 	top: 35px;
@@ -497,10 +498,6 @@ a {
 		margin-left: 6%;
 		margin-right: 6%;
 		width: 88vw;
-	}
-
-	input, textarea {
-		font-size: 1.5rem;
 	}
 }
 
