@@ -11,7 +11,7 @@ export default function Projects() {
     return (
         projects.map((project) => (
             <>
-                <a href={project.href} className="underline">{project.name}</a>: {project.desc}
+                <a href={project.href} className="underline project">{project.name}</a>: {project.desc}
                 <br /><br />
             </>
         ))
