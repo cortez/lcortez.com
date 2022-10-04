@@ -62,8 +62,8 @@ body {
 	color: var(--font);
 	background-color: var(--bg);
 	margin: 0;
-	height: 100%;
-	overflow: hidden;
+	max-height: 100%;
+	/* overflow: hidden; */
 }
 
 p {
@@ -78,7 +78,7 @@ h3 {
 }
 
 .caps {
-	line-height: 3em;
+	line-height: 2.75em;
 	font-weight: 500;
 	text-transform: uppercase;
 	color: var(--underline);
@@ -473,8 +473,8 @@ a {
 	.note-popup-content {
 		left: 0;
 		width: 100%;
-		height: 80vh;
-		top: 20vh;
+		height: 79vh;
+		top: 21vh;
 		border-bottom-left-radius: 0px;
 		border-bottom-right-radius: 0px;
 	}
