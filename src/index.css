@@ -473,15 +473,14 @@ a {
 	.note-popup-content {
 		left: 0;
 		width: 100%;
-		height: 70vh;
-		top: 30vh;
+		height: 90vh;
+		top: 29vh;
 		border-bottom-left-radius: 0px;
 		border-bottom-right-radius: 0px;
 	}
 
 	.note-popup-box {
-		height: 80vh;
-		position: absolute;
+		height: 100vh;
 		top: 0vh;
 		margin: 0;
 	}
@@ -543,7 +542,7 @@ a {
 	}
 }
 
-@media screen and (max-height:550px) {
+@media screen and (max-height:600px) {
 	html {
 		padding-bottom: 20vh;
 	}

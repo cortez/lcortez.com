@@ -6,7 +6,7 @@ export default function Dock() {
     const [visible, setVisible] = useState(false);
     const handleClick = event => {
         event.preventDefault();
-        setVisible(current => !current); 
+        setVisible(current => !current);
     };
 
     const escFunction = useCallback((event) => {
