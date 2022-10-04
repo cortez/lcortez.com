@@ -85,7 +85,7 @@ h3 {
 }
 
 span {
-	font-size: 15px;
+	font-size: 16px;
 	color: var(--icon);
 	font-weight: 400;
 }
@@ -188,7 +188,7 @@ input:hover, textarea:hover {
 }
 
 .note-popup-text h2 {
-	font-size: 22px;
+	font-size: 18px;
 	color: var(--underline-text);
 	left: 30px;
 	top: 35px;
@@ -466,7 +466,6 @@ a {
 }
 
 @media screen and (max-width:899px) {
-
 	.container .icons ul .floation {
 		display: none;
 	}
@@ -498,6 +497,10 @@ a {
 		margin-left: 6%;
 		margin-right: 6%;
 		width: 88vw;
+	}
+
+	input, textarea {
+		font-size: 15px;
 	}
 }
 
@@ -553,7 +556,6 @@ a {
 }
 
 @media screen and (max-height:550px) {
-
 	.note-popup-text {
 		margin-top: -3%;
 	}
