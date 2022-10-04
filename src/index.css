@@ -58,6 +58,7 @@
 
 html,
 body {
+	font-family: 0.99rem;
 	font-family: 'Satoshi';
 	color: var(--font);
 	background-color: var(--bg);
@@ -85,18 +86,12 @@ h3 {
 
 span {
 	color: var(--icon);
-	font-size: 0.8em;
-}
-
-.subheader {
+	font-size: 0.95rem;
 	font-weight: 400;
-	font-size: 0.85em;
-	top: -1.25px;
 }
 
 input, textarea {
 	color: var(--font);
-	font-size: 0.9em;
 	font-family: 'Satoshi';
 	width: 100%;
 	height: 3em;
@@ -192,17 +187,16 @@ input:hover, textarea:hover {
 }
 
 .note-popup-text h2 {
+	font-size: 1.2rem;
 	color: var(--underline-text);
 	left: 30px;
 	top: 35px;
 	position: absolute;
-	font-size: 1.1em;
 	font-weight: 600;
 }
 
 .note-popup-text h3 {
 	margin: 0;
-	font-size: 0.95em;
 	font-weight: 400;
 	padding-top: 0px;
 }
@@ -472,11 +466,6 @@ a {
 
 @media screen and (max-width:899px) {
 
-	html,
-	body {
-		font-size: 1.03em;
-	}
-
 	.container .icons ul .floation {
 		display: none;
 	}
@@ -524,11 +513,6 @@ a {
 
 @media screen and (min-width:900px) {
 
-	html,
-	body {
-		font-size: 1.05em;
-	}
-
 	.note-popup-content {
 		top: 40vh;
 		left: 30%;
@@ -568,11 +552,6 @@ a {
 }
 
 @media screen and (max-height:550px) {
-
-	html,
-	body {
-		font-size: 0.95em;
-	}
 
 	.note-popup-text {
 		margin-top: -3%;
