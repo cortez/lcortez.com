@@ -44,14 +44,14 @@ export function Form() {
     <>
       <h2>Contact</h2>
       <div className="before-form">
-        joseph@lcortez.com&nbsp;
+        <a href="mailto:joseph@lcortez.com" className="underline">joseph@lcortez.com</a>&nbsp;&nbsp;
         <span className="copy" onClick={copy}>
-          {copyStatus ? "Copied!" : <>{"Click to copy"} {<Copy />}</>}
+          {copyStatus ? "Copied!" : <>{"Copy"} {<Copy />}</>}
         </span>
       </div>
       <form ref={form} onSubmit={validateAndSubmitForm} id="form">
         <div className="form-inputs">
-          <textarea id="message" type="text" name="message" placeholder={buttonText} value={values.message} onChange={setMessage}/>
+          <textarea type="text" name="message" placeholder={buttonText} value={values.message} onChange={setMessage}/>
           <input type="submit" value="Send" className="submit" />
         </div>
       </form>

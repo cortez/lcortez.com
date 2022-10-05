@@ -5,7 +5,7 @@ import { Contact } from "./svg/Contact";
 export const Links = [
     {
         name: "GitHub",
-        color: "109, 74, 255",
+        color: "64, 120, 192",
         href: "https://github.com/cortez",
         icon: <GitHub />
     },  
