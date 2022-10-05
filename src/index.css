@@ -100,10 +100,11 @@ input, textarea {
 	height: 3em;
 	resize: none;
 	padding: 12.5px;
-	border-radius: 15px !important;
+	border-radius: 15px;
 	border: 1px solid var(--accent);
 	background-color: var(--accent);
 	outline-width: 0;
+	-webkit-appearance: none;
 }
 
 textarea {
@@ -484,13 +485,15 @@ a {
 
 @media screen and (max-height:600px) {	
 	p {
+		margin-left: 15%;
+		width: 70%;
 		margin-top: 3%;
 		padding-bottom: 20vh !important;
 	}
 
-	/* .project {
-		font-size: 1.5rem !important;
-	} */
+	textarea {
+		height: 8em;
+	}
 }
 
 @media screen and (max-width:709px) {
