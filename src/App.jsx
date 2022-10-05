@@ -4,12 +4,12 @@ import Dock from "./components/Dock";
 function App() {
   return (
     <div>
-        <p data-aos="zoom-in">
-          <span className="caps">About</span>
+        <p>
+          <span className="caps" data-aos="zoom-in" data-aos-delay="250">About</span>
           <br />
-          Joseph Cortez is a recent computer information systems graduate interested in building compelling brand identities using intuitive software.
+          <div data-aos="zoom-in" data-aos-delay="300">Joseph Cortez is a recent computer information systems graduate interested in building compelling brand identities using intuitive software.</div>
           <br /><br />
-          <span className="caps">Projects</span>
+          <span className="caps" data-aos="zoom-in" data-aos-delay="350">Projects</span>
           <br />
           <Projects />
         </p>

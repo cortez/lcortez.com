@@ -9,9 +9,9 @@ export default function Projects() {
     ];
 
     return (
-        projects.map((project) => (
+        projects.map((project, index) => (
             <>
-                <a href={project.href} className="underline project">{project.name}</a>: {project.desc}
+                <div data-aos="zoom-in" data-aos-delay={(index+3.5)*100}><a href={project.href} className="underline project">{project.name}</a>: {project.desc}</div>
                 <br /><br />
             </>
         ))
