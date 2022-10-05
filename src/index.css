@@ -1,9 +1,9 @@
 @charset "UTF-8";
 
 :root {
-	--font: #86868a;
+	--font: #8c8c90;
 	--bg: #F9F9F9;
-	--icon: #1C1C1E;
+	--icon: #333333;
 	--accent: #F4F4F4;
 	--accent-hover: #F2F2F7;
 	--box-bg: 250, 250, 250;
@@ -99,7 +99,7 @@ input, textarea {
 	resize: none;
 	padding: 12.5px;
 	margin-bottom: 7.5px;
-	border-radius: 15px;
+	border-radius: 18px;
 	border: 1px solid var(--accent);
 	background-color: var(--accent);
 	outline-width: 0;
@@ -114,10 +114,11 @@ input:focus, textarea:focus {
 	border: none;
 }
 
-input:hover, textarea:hover {
+input:hover, textarea:hover, .copy:hover {
 	color: var(--underline-text);
 	background-color: var(--accent-hover);
 	transition: all 0.25s ease 0s;
+	cursor: pointer;
 }
 
 .submit {
@@ -138,8 +139,29 @@ input:hover, textarea:hover {
     z-index: -1;
 }
 
-.formInputs {
-	padding-top: 60px;
+.copy {
+	zoom: 0.8;
+	margin-top: 65px;
+    color: var(--font);
+	font-weight: 500;
+	background-color: var(--accent);
+    outline: none;
+    border-radius: 18px;
+    text-decoration: none;
+	transition: all 0.25s ease 0s;
+    padding: 3px 12px;
+    display: inline-block;
+    line-height: 35px;
+    text-align: center;
+}
+
+.copy-svg {
+	margin-bottom: -9px;
+	zoom: 0.65;
+}
+
+.form-inputs {
+	padding-top: 20px;
 }
 
 .note-popup-box {
@@ -188,7 +210,7 @@ input:hover, textarea:hover {
 }
 
 .note-popup-text h2 {
-	font-size: 18px;
+	font-size: 20px;
 	color: var(--underline-text);
 	left: 30px;
 	top: 35px;
@@ -465,7 +487,7 @@ a {
 	animation-fill-mode: both;
 }
 
-@media screen and (max-width:899px) {
+@media screen and (max-width:799px) {
 	.container .icons ul .floation {
 		display: none;
 	}
@@ -474,7 +496,7 @@ a {
 		left: 0;
 		width: 100%;
 		height: 90vh;
-		top: 29vh;
+		top: 40vh;
 		border-bottom-left-radius: 0px;
 		border-bottom-right-radius: 0px;
 	}
@@ -503,15 +525,15 @@ a {
 	}
 }
 
-@media screen and (min-width:900px) {
+@media screen and (min-width:800px) {
 	.note-popup-content {
-		top: 40vh;
-		left: 30%;
-		width: 40%;
+		top: 43vh;
+		left: 30vw;
+		width: 40vw;
 	}
 
 	.note-popup-text {
-		padding: 5%;
+		padding: 30px;
 		width: 100%;
 	}
 

@@ -1,43 +1,60 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import emailjs from '@emailjs/browser';
-
-const isEmail = (email) => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email);
+import useClickToCopy from "../hooks/useClickToCopy";
+import { Copy } from "./svg/Copy";
 
 export function Form() {
-  const [values, setValues] = useState({ email: "" });
+  const text = "Send me a message!";
+  const [buttonText, setButtonText] = useState(text);
+
+  useEffect(()=> {
+    const timer = setTimeout(()=> {
+       setButtonText(text);
+    }, 2500);
+    return ()=> clearTimeout(timer);
+  }, [buttonText])
+
+  const [values, setValues] = useState({ message: "" });
   const [status, setStatus] = useState(undefined);
   const form = useRef();
+
   const validateAndSubmitForm = (e) => {
     e.preventDefault();
-    if (!isEmail(values.email)) {
+    if (values.message == "") {
       setStatus({ type: 'error' });
+      setButtonText("Message cannot be blank.");
     } else {
       emailjs.sendForm(process.env.REACT_APP_EMAILJS_SERVICE_ID, process.env.REACT_APP_EMAILJS_TEMPLATE_ID, form.current, process.env.REACT_APP_EMAILJS_PUBLIC_KEY)
       .then(() => {
           setStatus({ type: 'success' });
           document.getElementById("form").reset();
-          values.email = ""; 
+          setButtonText("Thank you! 🎃");
+          values.message = "";
       });
     }
   };
- 
-  const setEmail = (e) => {
-    setValues((values) => ({ ...values, email: e.target.value }));
+
+  const setMessage = (e) => {
+    setValues((values) => ({ ...values, message: e.target.value }));
   };
 
+  const [copyStatus, copy] = useClickToCopy("joseph@lcortez.com");
+
   return (
-    <form ref={form} onSubmit={validateAndSubmitForm} id="form">
-      <h2>Contact <span><a href="mailto:joseph@lcortez.com" className="underline">(joseph@lcortez.com)</a></span></h2>
-      <div className="formInputs">
-        <input type="text" name="name" placeholder="Name" />
-        <input type="text" name="email" placeholder="Email" value={values.email} onChange={setEmail}/>
-        <textarea name="message" placeholder="Message" />
-        <input type="submit" value="Send" className="submit" />
+    <>
+      <h2>Contact</h2>
+      <div className="before-form">
+        joseph@lcortez.com&nbsp;
+        <span className="copy" onClick={copy}>
+          {copyStatus ? "Copied!" : <>{"Click to copy"} {<Copy />}</>}
+        </span>
       </div>
-      <>
-        {status?.type === 'success' && <span>Thank you! I'll get back to you soon. 🎃</span>}
-        {status?.type === 'error' && ( <span>Please enter a valid email.</span>)}
-      </>
-    </form>
+      <form ref={form} onSubmit={validateAndSubmitForm} id="form">
+        <div className="form-inputs">
+          <textarea id="message" type="text" name="message" placeholder={buttonText} value={values.message} onChange={setMessage}/>
+          <input type="submit" value="Send" className="submit" />
+        </div>
+      </form>
+    </>
   );
 }
