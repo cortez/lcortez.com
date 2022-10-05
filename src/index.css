@@ -100,7 +100,7 @@ input, textarea {
 	height: 3em;
 	resize: none;
 	padding: 12.5px;
-	border-radius: 15px;
+	border-radius: 15px !important;
 	border: 1px solid var(--accent);
 	background-color: var(--accent);
 	outline-width: 0;
@@ -162,7 +162,7 @@ input:hover, .copy:hover {
 }
 
 .before-form {
-	margin-top: 65px;
+	margin-top: 60px;
 }
 
 .form-inputs {
@@ -482,7 +482,18 @@ a {
 	animation-fill-mode: both;
 }
 
-@media screen and (max-width:799px) {
+@media screen and (max-height:600px) {	
+	p {
+		margin-top: 3%;
+		padding-bottom: 20vh !important;
+	}
+
+	/* .project {
+		font-size: 1.5rem !important;
+	} */
+}
+
+@media screen and (max-width:709px) {
 	.container .icons ul .floation {
 		display: none;
 	}
@@ -520,7 +531,7 @@ a {
 	}
 }
 
-@media screen and (min-width:800px) {
+@media screen and (min-width:710px) {
 	.note-popup-content {
 		top: 43vh;
 		left: 30vw;
@@ -556,34 +567,5 @@ a {
 @media screen and (max-width:449px) {
 	.container .icons ul li .tooltip {
 		display: none;
-	}
-}
-
-@media screen and (max-height:600px) {
-	.note-popup-text {
-		margin-top: -3%;
-	}
-
-	p {
-		margin-top: 3%;
-		padding-bottom: 20vh !important;
-	}
-
-	.project {
-		font-size: 1.5rem !important;
-	}
-	
-	.note-popup-content {
-		top: 0vh;
-		height: 100vh;
-	}
-
-	.note.popup-text {
-		padding: 0;
-	}
-
-	input, textarea {
-		width: 100%;
-		height: 2.75em;
 	}
 }
