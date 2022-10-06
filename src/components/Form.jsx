@@ -47,7 +47,7 @@ export function Form() {
       <div className="before-form">
         <a href="mailto:joseph@lcortez.com" className="underline">joseph@lcortez.com</a>&nbsp;&nbsp;
         <span className="copy" onClick={copy}>
-          {copyStatus ? <>{"Copied!"} {<Copied />}</> : <>{"Copy"} {<Copy />}</>}
+          {copyStatus ? <>{<Copied />} {"Copied!"}</> : <>{<Copy />} {"Copy"}</>}
         </span>
       </div>
       <form ref={form} onSubmit={validateAndSubmitForm} id="form">
