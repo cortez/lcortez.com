@@ -154,7 +154,7 @@ input:hover, .copy:hover {
     border-radius: 15px;
     text-decoration: none;
 	transition: all 0.25s ease 0s;
-    padding: 3px 12px;
+    padding: 3px 18px 3px 12px;
     display: inline-block;
     line-height: 35px;
     text-align: center;
