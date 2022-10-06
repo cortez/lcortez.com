@@ -55,7 +55,7 @@
 }
 
 html,
-body {
+body, .about {
 	font-family: 'Satoshi';
 	color: var(--font);
 	background-color: var(--bg);
@@ -64,8 +64,11 @@ body {
 	/* overflow: hidden; */
 }
 
-p {
+.about, p {
 	font-size: 17px;
+}
+
+p {
 	margin-top: 33vh;
 	margin-left: 30%;
 	width: 40%;

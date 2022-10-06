@@ -7,7 +7,7 @@ function App() {
         <p>
           <span className="caps" data-aos="zoom-in" data-aos-delay="250">About</span>
           <br />
-          <div data-aos="zoom-in" data-aos-delay="300">Joseph Cortez is a recent computer information systems graduate interested in building compelling brand identities using intuitive software.</div>
+          <span className="about" data-aos="zoom-in" data-aos-delay="300">Joseph Cortez is a recent computer information systems graduate interested in building compelling brand identities using intuitive software. </span>
           <br /><br />
           <span className="caps" data-aos="zoom-in" data-aos-delay="350">Projects</span>
           <br />

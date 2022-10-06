@@ -28,7 +28,9 @@ export default function Dock() {
                 <section className="note-popup-box">
                     <div className="note-popup-content">
                         <div className="note-popup-text">
-                            <Form />
+                            <div>
+                                <Form />
+                            </div>
                         </div>
                         <a className="note-popup-close" onClick={handleClick}>
                             <div className="note-popup-line"></div>
