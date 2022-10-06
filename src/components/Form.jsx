@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import emailjs from '@emailjs/browser';
 import useClickToCopy from "../hooks/useClickToCopy";
 import { Copy } from "./svg/Copy";
+import { Copied } from "./svg/Copied";
 
 export function Form() {
   const text = "Send me a message!";
@@ -46,7 +47,7 @@ export function Form() {
       <div className="before-form">
         <a href="mailto:joseph@lcortez.com" className="underline">joseph@lcortez.com</a>&nbsp;&nbsp;
         <span className="copy" onClick={copy}>
-          {copyStatus ? "Copied!" : <>{"Copy"} {<Copy />}</>}
+          {copyStatus ? <>{"Copied!"} {<Copied />}</> : <>{"Copy"} {<Copy />}</>}
         </span>
       </div>
       <form ref={form} onSubmit={validateAndSubmitForm} id="form">

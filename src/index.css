@@ -553,13 +553,13 @@ a {
 
 @media screen and (min-width:1500px) {
 	.note-popup-content {
-		left: 31%;
-		width: 38%;
+		left: 34%;
+		width: 32%;
 	}
 	
 	p {
-		margin-left: 32%;
-		width: 36%;
+		margin-left: 35%;
+		width: 30%;
 	}
 	
 	.icons {
