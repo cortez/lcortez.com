@@ -5,13 +5,13 @@ import { Contact } from "./svg/Contact";
 export const Links = [
     {
         name: "GitHub",
-        color: "64, 120, 192",
+        color: "122, 130, 171",
         href: "https://github.com/cortez",
         icon: <GitHub />
     },  
     {
         name: "LinkedIn",
-        color: "0, 115, 177",
+        color: "122, 130, 171",
         href: "https://linkedin.com/in/seph",
         icon: <LinkedIn />
     },

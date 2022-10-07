@@ -81,11 +81,12 @@ window.onload = () => {
     let links = document.querySelectorAll("li"), float = document.getElementsByClassName("floation")[0];
 
     for (let i = 0; i < links.length; i++) {
-        let position = (links[i]).offsetLeft, color = links[i].getAttribute('data-color');   
+        let position = (links[i]).offsetLeft;
+        // color = links[i].getAttribute('data-color');  
         links[i].onmouseover = function () {
-            this.style.color = "rgb("+color+")";
+            this.style.color = "var(--font)";
             float.style.left = position + "px";
-            float.style.backgroundColor = "rgb("+color+", 0.12)";
+            float.style.backgroundColor = "var(--accent)";
         }
 
         links[i].onmouseleave = function () {

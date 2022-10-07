@@ -3,22 +3,21 @@
 :root {
 	--font: #3A3A3C;
 	--bg: #F9F9F9;
-	--icon: #333333;
-	--accent: #F2F2F7;
-	--accent-hover: #ECECF2;
+	--accent: #F2F2F2;
+	--accent-hover: #F0F0F0;
 	--box-bg: 250, 250, 250;
 	--box-shadow: 180, 180, 180;
 	--popup-bg: 75, 75, 75;
 	--close: #8D8D94;
 	--underline-text: #3A3A3C;
-	--underline: #C5C5CD;
+	--underline: #9797A5;
+	--icon: #6F6F6F;
 }
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--font: rgb(155, 155, 155);
+		--font: #9B9B9B;
 		--bg: rgb(21, 21, 21);
-		--icon: #AEAEB2;
 		--accent: rgb(32, 32, 32);
 		--accent-hover: #222222;
 		--box-bg: 27, 27, 27;
@@ -26,7 +25,8 @@
 		--popup-bg: 0, 0, 0;
 		--close: rgb(115, 115, 115);
 		--underline-text: #C7C7CC;
-		--underline: #3c3c3e;
+		--underline: #3C3C3C;
+		--icon: #5F5F68;
 	}
 }
 
@@ -55,23 +55,25 @@
 }
 
 html,
-body, .about {
+body {
+	font-weight: 500;
 	font-family: 'Satoshi';
 	color: var(--font);
 	background-color: var(--bg);
 	margin: 0;
 	max-height: 100%;
-	/* overflow: hidden; */
+	caret-color: var(--font);
 }
 
-.about, p {
-	font-size: 17px;
+.render {
+	font-size: 1.2em;
+	margin-top: 32vh;
+	margin-left: 30vw;
+	width: 40vw;
 }
 
 p {
-	margin-top: 33vh;
-	margin-left: 30%;
-	width: 40%;
+	margin-bottom: -17px;
 }
 
 h3 {
@@ -79,8 +81,8 @@ h3 {
 }
 
 .caps {
-	line-height: 2.5em;
 	font-weight: 500;
+	line-height: 2.8em;
 	text-transform: uppercase;
 	color: var(--underline);
 }
@@ -88,7 +90,6 @@ h3 {
 span {
 	font-size: 16px;
 	color: var(--icon);
-	font-weight: 400;
 }
 
 ::placeholder {
@@ -96,6 +97,7 @@ span {
 }
 
 input, textarea {
+	font-weight: 500;
 	font-size: 16px;
 	color: var(--font);
 	font-family: 'Satoshi';
@@ -117,7 +119,7 @@ textarea {
 
 input:focus, textarea:focus {
 	outline-width: 0;
-	border: none;
+	border: 1px solid var(--accent);
 }
 
 input:hover, .copy:hover {
@@ -128,8 +130,8 @@ input:hover, .copy:hover {
 }
 
 .submit {
-	color: var(--font);
-	font-weight: 500;
+	font-weight: 600;
+	color: var(--close);
     position: relative;
     display: inline-block;
     border: none;
@@ -146,12 +148,12 @@ input:hover, .copy:hover {
 }
 
 .copy {
-	zoom: 0.8;
+	font-weight: 600;
+	zoom: 0.75;
     color: var(--font);
-	font-weight: 500;
-	background-color: var(--accent);
     outline: none;
-    border-radius: 15px;
+	border: 2.8px var(--accent-hover) solid;
+    border-radius: 100px;
     text-decoration: none;
 	transition: all 0.25s ease 0s;
     padding: 3px 18px 3px 12px;
@@ -191,7 +193,7 @@ input:hover, .copy:hover {
 	width: 100%;
 	height: 100%;
 	background: rgb(var(--popup-bg), 0.21);
-/* 	backdrop-filter: blur(5px);
+	/* backdrop-filter: blur(5px);
 	-webkit-backdrop-filter: blur(5px); */
 }
 
@@ -205,8 +207,6 @@ input:hover, .copy:hover {
 	border-radius: 45px;
 	background: rgba(var(--box-bg));
 	box-shadow: 0 8px 32px 0 rgba(var(--box-shadow), 0.25);
-	backdrop-filter: blur(20px);
-	-webkit-backdrop-filter: blur(20px);
 }
 
 .note-popup-active {
@@ -224,12 +224,10 @@ input:hover, .copy:hover {
 	left: 30px;
 	top: 35px;
 	position: absolute;
-	font-weight: 600;
 }
 
 .note-popup-text h3 {
 	margin: 0;
-	font-weight: 400;
 	padding-top: 0px;
 }
 
@@ -253,7 +251,7 @@ input:hover, .copy:hover {
 
 .note-popup-close .note-popup-line {
 	width: 100%;
-	height: 2px;
+	height: 2.3px;
 	border-radius: 100px;
 	background: var(--close);
 	position: relative;
@@ -266,11 +264,11 @@ input:hover, .copy:hover {
 }
 
 .note-popup-close .note-popup-line:first-child {
-	margin-top: 1px;
+	margin-top: 0.8px;
 	margin-bottom: 0;
 	transform: rotate(45deg);
 	transform-origin: center;
-	top: 7px;
+	top: 7.25px;
 }
 
 .note-popup-close .note-popup-line:last-child {
@@ -292,15 +290,15 @@ input:hover, .copy:hover {
     display: block;
     position: absolute;
     right: 0;
-    bottom: 0px;
-    height: 1.5px;
+    bottom: -1.5px;
+    height: 1.7px;
     width: 100%;
     transition: width 0s ease;
 }
 
 .underline:hover:before {
     width: 0%;
-    background: var(--underline);
+    background: var(--accent-hover);
     transition: width .75s ease;
 }
 
@@ -309,10 +307,10 @@ input:hover, .copy:hover {
     display: block;
     position: absolute;
     left: 0;
-    bottom: 0px;
-    height: 1.5px;
+    bottom: -1.5px;
+    height: 1.7px;
     width: 100%;
-    background: var(--underline);
+    background: var(--accent-hover);
     transition: width .75s ease;
 }
 
@@ -324,30 +322,6 @@ input:hover, .copy:hover {
 
 ::-webkit-scrollbar {
 	display: none;
-}
-
-@-webkit-keyframes fadeInUp {
-	0% {
-		opacity: 0;
-		-webkit-transform: translateY(25px);
-	}
-
-	100% {
-		opacity: 1;
-		-webkit-transform: translateY(0);
-	}
-}
-
-@keyframes fadeInUp {
-	0% {
-		opacity: 0;
-		transform: translateY(25px);
-	}
-
-	100% {
-		opacity: 1;
-		transform: translateY(0px);
-	}
 }
 
 .container {
@@ -363,7 +337,7 @@ input:hover, .copy:hover {
 .icons {
 	padding: 6px;
 	border-radius: 26px;
-	zoom: 0.85;
+	zoom: 0.9;
 	margin-bottom: 1vh;
 }
 
@@ -402,6 +376,7 @@ input:hover, .copy:hover {
 }
 
 .container .icons ul li .tooltip {
+	font-weight: 500;
 	position: absolute;
 	top: -50px;
 	left: -7px;
@@ -422,7 +397,7 @@ input:hover, .copy:hover {
 	box-shadow: 0 8px 32px 0 rgba(var(--box-shadow), 0.25);
 	backdrop-filter: blur(50px);
 	-webkit-backdrop-filter: blur(20px);
-	border: 1.5px solid var(--accent-hover);
+	border: 1.6px solid var(--accent-hover);
 }
 
 .container .icons ul li:hover .tooltip {
@@ -439,7 +414,7 @@ a {
 @-webkit-keyframes bounceInUp {
 	0% {
 		opacity: 0;
-		-webkit-transform: translateY(1000px);
+		-webkit-transform: translateY(2000px);
 	}
 
 	60% {
@@ -487,7 +462,7 @@ a {
 }
 
 @media screen and (max-height:600px) {	
-	p {
+	.render {
 		margin-left: 15%;
 		width: 70%;
 		margin-top: 3%;
@@ -500,7 +475,7 @@ a {
 }
 
 @media screen and (max-width:709px) {
-	.container .icons ul .floation {
+	.container .icons ul li .floation,  .tooltip {
 		display: none;
 	}
 
@@ -525,10 +500,10 @@ a {
 		width: 100%;
 	}
 
-	p {
-		margin-top: 12%;
-		margin-left: 6%;
-		margin-right: 6%;
+	.render {
+		margin-top: vh;
+		margin-left: 6vw;
+		margin-right: 6vw;
 		width: 88vw;
 	}
 
@@ -540,8 +515,8 @@ a {
 @media screen and (min-width:710px) {
 	.note-popup-content {
 		top: 44vh;
-		left: 30vw;
-		width: 40vw;
+		left: 29vw;
+		width: 42vw;
 	}
 
 	.note-popup-text {
@@ -556,22 +531,16 @@ a {
 
 @media screen and (min-width:1500px) {
 	.note-popup-content {
-		left: 34%;
-		width: 32%;
+		left: 34vw;
+		width: 32vw;
 	}
 	
-	p {
-		margin-left: 35%;
-		width: 30%;
+	.render {
+		margin-left: 35vw;
+		width: 30vw;
 	}
 	
 	.icons {
 		zoom: 0.9;
-	}
-}
-
-@media screen and (max-width:449px) {
-	.container .icons ul li .tooltip {
-		display: none;
 	}
 }
