@@ -544,3 +544,13 @@ a {
 		zoom: 0.9;
 	}
 }
+
+@media screen and (min-height:1500px) {
+	.render {
+		margin-top: 44vh;
+	}
+
+	.note-popup-content {
+		top: 47vh;
+	}
+}
