@@ -18,7 +18,6 @@ export function Form() {
   const [values, setValues] = useState({ message: "" });
   const [status, setStatus] = useState(undefined);
   const form = useRef();
-
   const validateAndSubmitForm = (e) => {
     e.preventDefault();
     if (values.message == "") {
@@ -38,7 +37,6 @@ export function Form() {
   const setMessage = (e) => {
     setValues((values) => ({ ...values, message: e.target.value }));
   };
-
   const [copyStatus, copy] = useClickToCopy("joseph@lcortez.com");
 
   return (

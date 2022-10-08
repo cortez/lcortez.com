@@ -79,7 +79,6 @@ export default function Dock() {
 
 window.onload = () => {
     let links = document.querySelectorAll("li"), float = document.getElementsByClassName("floation")[0];
-
     for (let i = 0; i < links.length; i++) {
         let position = (links[i]).offsetLeft;
         // color = links[i].getAttribute('data-color');  
@@ -88,7 +87,6 @@ window.onload = () => {
             float.style.left = position + "px";
             float.style.backgroundColor = "var(--accent)";
         }
-
         links[i].onmouseleave = function () {
             this.style.color = "var(--icon)";
             float.style.backgroundColor = "var(--box-bg)";
