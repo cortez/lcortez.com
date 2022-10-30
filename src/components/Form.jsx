@@ -20,13 +20,15 @@ export function Form() {
   const form = useRef();
   const validateAndSubmitForm = (e) => {
     e.preventDefault();
-    if (values.message == "") {
+    if (values.message === "") {
       setStatus({ type: 'error' });
+      console.log(status);
       setButtonText("Message cannot be blank.");
     } else {
       emailjs.sendForm(process.env.REACT_APP_EMAILJS_SERVICE_ID, process.env.REACT_APP_EMAILJS_TEMPLATE_ID, form.current, process.env.REACT_APP_EMAILJS_PUBLIC_KEY)
       .then(() => {
           setStatus({ type: 'success' });
+          console.log(status);
           document.getElementById("form").reset();
           setButtonText("Thank you! 🎃");
           values.message = "";
