@@ -7,11 +7,6 @@ export default function Projects() {
             desc: "Plain text collaboration tool accessible from any device."
         },
         {
-            name: "Row",
-            href: "https://github.com/cortez/row",
-            desc: "Hot keys to copy frequently used text, made for the Arc browser."
-        },
-        {
             name: "cortez/web",
             href: "https://github.com/cortez/web",
             desc: "The source code of this website, built using React."
