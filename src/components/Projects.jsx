@@ -10,7 +10,7 @@ export default function Projects() {
             name: "cortez/web",
             href: "https://github.com/cortez/web",
             desc: "The source code of this website, built using React."
-        },
+        }
     ];
 
     return (
