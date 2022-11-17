@@ -5,7 +5,7 @@ import { Copy } from "./svg/Copy";
 import { Copied } from "./svg/Copied";
 
 export function Form() {
-  const text = "Send me a message!";
+  const text = "Send me a quick message!";
   const [buttonText, setButtonText] = useState(text);
 
   useEffect(()=> {
@@ -30,7 +30,7 @@ export function Form() {
           setStatus({ type: 'success' });
           console.log(status);
           document.getElementById("form").reset();
-          setButtonText("Thank you! 🎄");
+          setButtonText("Thank you and happy holidays!");
           values.message = "";
       });
     }
