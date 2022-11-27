@@ -4,7 +4,7 @@ export default function Projects() {
         {
             name: "Coinworth",
             href: "https://coinworth.xyz",
-            desc: "Simple cash and cryptocurrency portfolio tracker."
+            desc: "Cash and cryptocurrency portfolio tracker."
         },
         {
             name: "Quill",
