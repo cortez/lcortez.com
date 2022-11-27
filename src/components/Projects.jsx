@@ -2,6 +2,11 @@ export default function Projects() {
     
     const projects = [
         {
+            name: "Coinworth",
+            href: "https://coinworth.xyz",
+            desc: "Simple cash and cryptocurrency portfolio tracker."
+        },
+        {
             name: "Quill",
             href: "https://quill.live",
             desc: "Plain text collaboration tool accessible from any device."
