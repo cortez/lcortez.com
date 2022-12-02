@@ -11,11 +11,11 @@ export default function Projects() {
             href: "https://quill.live",
             desc: "Plain text collaboration tool accessible from any device."
         },
-        {
-            name: "cortez/web",
-            href: "https://github.com/cortez/web",
-            desc: "The source code of this website, built using React."
-        }
+        // {
+        //     name: "cortez/web",
+        //     href: "https://github.com/cortez/web",
+        //     desc: "The source code of this website, built using React."
+        // }
     ];
 
     return (
