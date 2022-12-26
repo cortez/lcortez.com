@@ -30,7 +30,7 @@ export function Form() {
           setStatus({ type: 'success' });
           console.log(status);
           document.getElementById("form").reset();
-          setButtonText("Thank you and happy holidays!");
+          setButtonText("Thank you!");
           values.message = "";
       });
     }
