@@ -4,7 +4,7 @@ export default function Projects() {
         {
             name: "Coins",
             href: "https://coins.lcortez.com",
-            desc: "Real-time cash and cryptocurrency portfolio tracker."
+            desc: "Cash and cryptocurrency portfolio tracker."
         },
         {
             name: "Quill",
